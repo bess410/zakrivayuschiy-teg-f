@@ -9,6 +9,21 @@
   --header-font-weight: 785;
   --background-color: #000;
   --main-color: #00CC14;
+  --background-image: repeating-linear-gradient(
+      90deg,
+      #d3d3d3,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      #d3d3d3,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(#007f0c, #004306);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,6 +32,21 @@
     --header-font-weight: 785;
     --background-color: #000;
     --main-color: #00CC14;
+    --background-image: repeating-linear-gradient(
+      90deg,
+      #d3d3d3,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      #d3d3d3,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(#007f0c, #004306);
   }
 }
 

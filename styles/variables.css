@@ -6,4 +6,19 @@
   --header-font-weight: 700;
   --background-color: #fff;
   --main-color: #000;
+  --background-image: repeating-linear-gradient(
+      90deg,
+      #d3d3d3,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      #d3d3d3,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(#e7e7e7 0 0.01vh, #1a1a1a);
 }
