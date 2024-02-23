@@ -19,6 +19,4 @@
   font-variation-settings: 'wght' var(--base-font-weight);
   background: var(--background-color);
   color: var(--main-color);
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
 }
