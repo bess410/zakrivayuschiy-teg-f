@@ -1,0 +1,6 @@
+node_modules/
+pixel-perfect/
+package-lock.json
+package.json
+.prettierrc
+stylelint.config.js
