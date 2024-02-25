@@ -66,12 +66,22 @@
             </p>
             <p>Место для ваших воспоминаний о начале обучения.</p>
           </div>
-          <button class="card__button">
-            <img src="./svg/heart.svg" alt="Иконка сердечка" />
-            <span class="button__text">Like</span>
-          </button>
+          <div class="card__button-group">
+            <button class="card__button-heart">
+              <img src="./svg/heart.svg" alt="Иконка сердечка" />
+            </button>
+            <button class="card__button-like">
+              <span class="button__text">Like</span>
+            </button>
+          </div>
         </div>
       </article>
+      <button class="button-save">
+        <svg class="button-save-icon" viewBox="0 0 42 42">
+          <use href="./svg/floppy.svg#floppy"></use>
+        </svg>
+        <span class="button__text">Сохранить на память</span>
+      </button>
     </main>
     <script src="./scripts/like.js"></script>
   </body>
