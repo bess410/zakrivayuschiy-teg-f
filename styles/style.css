@@ -75,6 +75,31 @@
   background: none;
   text-transform: inherit;
   border: none;
+  transition: opacity 0.3s ease;
+}
+
+.theme-menu__button:hover {
+  opacity: 60%;
+  transition: opacity 0.3s ease;
+}
+.theme-menu__button:focus-visible,
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 60%;
+}
+
+.theme-menu__button::after {
+  content: '';
+  block-size: 3px;
+  border-block-end: 2px solid var(--main-color);
+  display: block;
+  scale: 0;
+  transform-origin: 0;
+  transition: scale 0.3s ease;
+}
+
+.theme-menu__button:focus-visible::after {
+  scale: 1;
 }
 
 .theme-menu__button[disabled=true] {
@@ -83,6 +108,7 @@
 }
 
 .theme-menu__button[disabled=true]::before {
+  animation: nav-menu-pointer 0.5s ease-in-out infinite alternate;
   inset-inline-start: -20px;
   position: absolute;
   content: '▶';
