@@ -4,11 +4,10 @@
 ✦ theme-dark — класс тёмной темы
 ✦ theme-light — класс светлой темы
 ✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ card__like-button — для кнопки Like рядом с иконкой DONE
+✦ card__icon-button — для кнопки, оборачивающей иконку DONE
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
+✦ button__text — для обозначения текстового элемента внутри кнопки DONE
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
@@ -92,9 +91,10 @@
 .theme-menu__button::after {
   content: '';
   position: absolute;
-  block-size: 3px;
+  margin-block-start: 1px;
+  block-size: 2px;
   inline-size: 100%;
-  border-block-end: 2px solid var(--main-color);
+  background: var(--main-color);
   display: block;
   scale: 0;
   transform-origin: 0;
@@ -149,10 +149,10 @@
   mix-blend-mode: hard-light;
   opacity: 50%;
   text-shadow:  
-    -1px 0 var(--background-color), 
-    0 1px var(--background-color), 
-    1px 0 var(--background-color),  
-    0 -1px var(--background-color);
+    -1px 0 var(--accent-color), 
+    0 1px var(--accent-color), 
+    1px 0 var(--accent-color),  
+    0 -1px var(--accent-color);
   inset-block-start: clamp(1.4375rem, 1.3935rem + 0.1878vw, 1.5625rem);
   inset-inline-end: clamp(0.6875rem, 0.3794rem + 1.3146vw, 1.5625rem);
   font-size: 14px;
@@ -162,10 +162,10 @@
   position: absolute;
 }
 
-@supports((text-stroke: 1px var(--background-color)) or (-webkit-text-stroke: 1px var(--background-color))) {
+@supports((text-stroke: 1px var(--accent-color)) or (-webkit-text-stroke: 1px var(--accent-color))) {
   .card__label {
-      -webkit-text-stroke: 1px var(--background-color);
-      text-stroke: 1px var(--background-color);
+      -webkit-text-stroke: 1px var(--accent-color);
+      text-stroke: 1px var(--accent-color);
       text-shadow: none;
   }
 } 
@@ -199,22 +199,53 @@
   gap: 12px;
 }
 
-.card__button-heart{
+.card__icon-button {
   border: none;
   background: none;
 }
 
-.card__button-like {
-  background: none;
+.card__like-button {
+  overflow: hidden;
+  position: relative;
+  background: var(--background-color);
   display: block;
   border: 2px solid var(--main-color);
-  padding: 12px 37px;
+  block-size: 38px;
+  inline-size: 130px;
   font-family: var(--accent-font), sans-serif;
   font-size: 14px;
   line-height: 90%;
+  transition: box-shadow 0.3s ease;
+}
+
+.card__like-button::before,
+.button-save::before {
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  position: absolute;
+  content: '';
+  block-size: 100%;
+  inline-size: 100%;
+  background: var(--main-color);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.card__like-button:hover::before,
+.button-save:hover::before {
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.button__text {
+  color: var(--accent-color);
+  mix-blend-mode: difference;
+  position: relative;
 }
 
 .button-save {
+  overflow: hidden;
+  position: relative;
   background: var(--background-color);
   display: flex;
   gap: 8px;
@@ -226,9 +257,18 @@
   font-family: var(--accent-font), sans-serif;
   font-size: 14px;
   line-height: 90%;
+  transition: box-shadow 0.3s ease;
 }
 
 .button-save-icon {
+  mix-blend-mode: difference;
+  color: var(--accent-color);
   height: 22px;
   width: 22px;
+}
+
+.button-save:focus, .card__like-button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--main-color);
+  transition: box-shadow 0.3s ease;
 }
