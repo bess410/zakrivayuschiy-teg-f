@@ -33,6 +33,7 @@
     --header-font-weight: 785;
     --background-color: #000;
     --main-color: #00CC14;
+    --accent-color: #00CC14;
     --background-image: repeating-linear-gradient(
       90deg,
       #d3d3d3,
