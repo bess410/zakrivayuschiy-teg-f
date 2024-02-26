@@ -200,7 +200,6 @@
 }
 
 .card__icon-button {
-  border: none;
   background: none;
   border: 2px solid transparent;
   transition: border 0.3s ease;
