@@ -87,12 +87,12 @@
 }
 
 .like-icon.is-liked .core {
-  fill: var(--contour-heart-color, var(--icon-sparks-color));
+  fill: var(--icon-sparks-color);
   transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked .contour {
-  fill: var(--contour-heart-color, var(--icon-sparks-color));
+  fill: var(--icon-sparks-color);
   transition: fill 0.3s 0.06s linear;
 }
 
