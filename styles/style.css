@@ -340,3 +340,31 @@
   inline-size: 100%;
   text-transform: uppercase;
 }
+
+.filter__sepia {
+  filter: sepia(100%)
+}
+
+.filter__contrast {
+  filter: contrast(200%);
+}
+
+.filter__rotate {
+  filter: hue-rotate(100deg);
+}
+
+.filter__brightness-blur {
+  filter: blur(2px) brightness(50%);
+}
+
+.filter__saturate {
+  filter: saturate(350%);
+}
+
+.filter__invert {
+  filter: invert(100%);
+}
+
+.filter__opacity {
+  filter: opacity(80%);
+}
